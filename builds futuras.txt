@@ -22,7 +22,7 @@
 
 - Anillos: soj o bulkatos.
 
-- Inventario: Torch Pala + Sk Ofensivas.
+- Inventario: Torch Pala + Sk Auras Ofensivas.
 
 
 * Amazona.
@@ -33,13 +33,14 @@
 
 - Amu: + 2 o + 3 a pasivas. 
 
-- Arma:
+- Arma: Armonia 'TirIthSolKo'.
+https://diablo.fandom.com/wiki/Harmony_Rune_Word
 
 - Secunndaria: Nada.
 
 - Armadura: Enigma.
 
-- Guantes: Nada.
+- Guantes: + 3 pasivas.
 
 - Cinto: Aracnid.
 
