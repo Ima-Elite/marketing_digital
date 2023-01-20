@@ -1,0 +1,691 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Proyecto final</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="948f8821-6a82-4792-bc5b-518152d7aae8" class="page sans"><header><img class="page-cover-image" src="https://images.unsplash.com/photo-1533854775446-95c4609da544?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">📖</span></div><h1 class="page-title">Proyecto final</h1></header><div class="page-body"><h1 id="11797f61-e5ab-4760-8387-1f6ac0c1af99" class="block-color-red_background">Índice del proyecto</h1><ol type="1" id="f65e11db-b368-4d91-9069-a71cd35e1079" class="numbered-list" start="1"><li><strong><mark class="highlight-brown">Análisis de la situación actual</mark></strong><ol type="a" id="e0812e5c-191a-48ca-a60a-367f8eee14a1" class="numbered-list" start="1"><li><strong><mark class="highlight-orange">Aspectos generales</mark></strong></li></ol><ol type="a" id="c209a343-7013-418b-8345-d6a724078d55" class="numbered-list" start="2"><li><strong><mark class="highlight-orange">Monetización</mark></strong></li></ol><ol type="a" id="7468e052-1eff-40df-8eb8-27fa82d55316" class="numbered-list" start="3"><li><strong><mark class="highlight-orange">Investigación de las tendencias del sector</mark></strong></li></ol><ol type="a" id="362ea50a-e381-46fb-a41b-30b4167eeb97" class="numbered-list" start="4"><li><strong><mark class="highlight-orange">Océano azul (si aplica)</mark></strong></li></ol><ol type="a" id="68dec59f-0dd4-45e7-a245-4d6261817194" class="numbered-list" start="5"><li><strong><mark class="highlight-orange">Factores Pestel (si aplica)</mark></strong></li></ol><ol type="a" id="8b706da7-02fb-43c0-8c79-35540639cb57" class="numbered-list" start="6"><li><strong><mark class="highlight-orange">DAFO</mark></strong></li></ol><ol type="a" id="ab0ede66-dd8e-4897-954b-be7f8473b65d" class="numbered-list" start="7"><li><strong><mark class="highlight-orange">Business model canvas (con imagen)</mark></strong></li></ol></li></ol><ol type="1" id="6d19022e-835e-4d45-9b82-9d033d736f14" class="numbered-list" start="2"><li><mark class="highlight-brown"><strong>Análisis de la competencia</strong></mark><ol type="a" id="106e8cde-c6bd-4c90-9d00-61077cb776fb" class="numbered-list" start="1"><li><strong><mark class="highlight-orange">Benchmark (tabla)</mark></strong></li></ol><ol type="a" id="abdfe1aa-ad46-4c22-a292-efd20e4962cf" class="numbered-list" start="2"><li><strong><mark class="highlight-orange">Análisis de canales digitales (competencia)</mark></strong></li></ol><ol type="a" id="73847af6-0e33-4ac8-854f-d597039546d8" class="numbered-list" start="3"><li><strong><mark class="highlight-orange">Conclusiones </mark></strong></li></ol></li></ol><ol type="1" id="1e8a5a38-ca19-4e2f-80d4-58afc294541e" class="numbered-list" start="3"><li><mark class="highlight-brown"><strong>Estudio de Cliente</strong></mark><ol type="a" id="c056c739-19f4-40fe-b54b-71003873cf3c" class="numbered-list" start="1"><li><mark class="highlight-orange"><strong>Customers Personas</strong></mark></li></ol><ol type="a" id="0452e61f-39cb-4e42-843a-47d9695aebd3" class="numbered-list" start="2"><li><mark class="highlight-orange"><strong>Mapa de empatía</strong></mark></li></ol><ol type="a" id="83c1a43c-b652-4b62-b8e1-57e1be8448f4" class="numbered-list" start="3"><li><mark class="highlight-orange"><strong>Conclusiones</strong></mark></li></ol></li></ol><ol type="1" id="122b4593-6cf4-43a4-b3d7-d7e96f669d2a" class="numbered-list" start="4"><li><mark class="highlight-brown"><strong>Marketing basics</strong></mark><ol type="a" id="15f8b0b3-0893-48c7-9189-ae01b34cd6e2" class="numbered-list" start="1"><li><mark class="highlight-orange"><strong>Posicionamiento</strong></mark></li></ol><ol type="a" id="41dfb6dd-b212-4652-86a6-968ed9cd42b5" class="numbered-list" start="2"><li><mark class="highlight-orange"><strong>Marketing mix</strong></mark><ol type="i" id="6893d1b4-a840-44d4-8fde-90fea72dc630" class="numbered-list" start="1"><li><strong>Producto/valor al cliente</strong></li></ol><ol type="i" id="0bad6b79-1011-4329-85e0-27471c4dab9e" class="numbered-list" start="2"><li><strong>Precio/coste</strong></li></ol><ol type="i" id="9ba2ae06-f4ce-4277-9c42-bf4974d742e8" class="numbered-list" start="3"><li><strong>Promoción /comunicación</strong></li></ol><ol type="i" id="2d0528a5-d3c5-4208-8649-53e48f255378" class="numbered-list" start="4"><li><strong>Punto de venta/conveniencia</strong></li></ol></li></ol><ol type="a" id="d18031cd-e3a4-4ac6-8034-9d83f3cd0a38" class="numbered-list" start="3"><li><mark class="highlight-orange"><strong>Precios</strong></mark></li></ol></li></ol><ol type="1" id="febcd888-5ed5-451e-b5fd-fc85c19058bb" class="numbered-list" start="5"><li><mark class="highlight-brown"><strong>Comunicación</strong></mark><ol type="a" id="0e4f7695-951b-4a45-9f33-0c80395f4dd5" class="numbered-list" start="1"><li><mark class="highlight-orange"><strong>3 factores psicológicos </strong></mark></li></ol><ol type="a" id="7d491aeb-133a-4d4a-90e3-e0de90af6bf3" class="numbered-list" start="2"><li><mark class="highlight-orange"><strong>“ejercicio web”</strong></mark><strong> </strong><ol type="i" id="03eacded-900b-4d7a-bbcf-eab2751d7268" class="numbered-list" start="1"><li><strong>Portada</strong></li></ol><ol type="i" id="b45168db-7156-46f7-b5f8-500523e9c78d" class="numbered-list" start="2"><li><strong>Quienes somos</strong></li></ol></li></ol><ol type="a" id="8c6ed95b-559d-468d-84b0-b100549756b1" class="numbered-list" start="3"><li><mark class="highlight-orange"><strong>Storybrand</strong></mark></li></ol></li></ol><ol type="1" id="5768fa3b-ff00-410a-8309-0bd6d0ca5ce4" class="numbered-list" start="6"><li><mark class="highlight-brown"><strong>Contenidos</strong></mark><ol type="a" id="3c47f8c7-e84e-4a0c-8e74-8a4f147074f6" class="numbered-list" start="1"><li><mark class="highlight-orange"><strong>Post de blog</strong></mark></li></ol><ol type="a" id="ec66d723-b502-44f4-820c-e33313bdd495" class="numbered-list" start="2"><li><mark class="highlight-orange"><strong>Ejemplo de post de Instagram + hashtags</strong></mark></li></ol></li></ol><ol type="1" id="8c4aec05-eac8-470c-8dcf-22705f711b76" class="numbered-list" start="7"><li><mark class="highlight-brown"><strong>Campaña de e-mail marketing</strong></mark></li></ol><ol type="1" id="63794919-c1ab-46cf-9496-e71d22da60bf" class="numbered-list" start="8"><li><mark class="highlight-brown"><strong>Programa editorial</strong></mark></li></ol><h1 id="07c93099-517f-424b-b8f6-c82fe2d81bcf" class="block-color-blue_background"> * Idea</h1><p id="44d5773a-11b9-44ac-9294-fe2cf2ba0504" class="">Centro de estudios/academia integral especializado en nuevas tecnologías</p><div id="ae87d212-7c6e-46d7-a488-114cf42f82e7" class="column-list"><div id="4682974a-9c28-4a7d-93a2-2136c92d6387" style="width:37.5%" class="column"><h2 id="c72d2578-e6ed-4400-bc4b-db64ecd146b7" class="">Cursos</h2><p id="2d39f496-86de-4a54-9d3b-2d853e2c0607" class="">Cursos tanto online como presenciales</p><ul id="ca019cb5-d029-4045-8a6e-e02bb63f160d" class="bulleted-list"><li style="list-style-type:disc">Preparación de oposiciones</li></ul><ul id="2f299949-82c3-4202-8ce5-bfd02905e717" class="bulleted-list"><li style="list-style-type:disc">Informática y nuevas tecnologías</li></ul><ul id="40d5c88d-1759-4b6c-9199-1fe529652e64" class="bulleted-list"><li style="list-style-type:disc">Idiomas</li></ul></div><div id="5ffc48e7-a2c5-4634-bc2a-327d176399e8" style="width:33.333333333333336%" class="column"><h2 id="a606c662-b986-4f6a-a5cd-fd1bc3639164" class="">Otras características</h2><ul id="d5088a0c-5c1f-4c22-8e27-558990af1c11" class="bulleted-list"><li style="list-style-type:disc">Bolsa de empleo</li></ul><ul id="0d0b47f5-b79d-465a-b564-6bd8bd871c5f" class="bulleted-list"><li style="list-style-type:disc">Colaboraciones y charlas</li></ul><ul id="e1eae6e4-cc08-4498-ac1a-0bb052f23191" class="bulleted-list"><li style="list-style-type:disc">Talleres</li></ul><ul id="62fb1758-094f-4d03-a358-ce1356b28ce1" class="bulleted-list"><li style="list-style-type:disc">Intranet </li></ul><p id="6050d4a8-08a6-4e2a-8a77-cae351ce69ef" class="">
+</p></div><div id="4fb9f6b8-ec23-4774-bb91-5089b097b92a" style="width:29.166666666666675%" class="column"><h2 id="9018c509-b5b9-4137-8d2b-cda21c554818" class="">Marketing </h2><ul id="dd3207e9-492c-4c7f-afa6-d9c5affcc09c" class="bulleted-list"><li style="list-style-type:disc">Redes sociales<ul id="931b14c1-aae8-4755-893a-6f0c71829d18" class="bulleted-list"><li style="list-style-type:circle">LinkedIn</li></ul><ul id="5552860e-a6ec-4cac-8f80-a9369aa70b5b" class="bulleted-list"><li style="list-style-type:circle">Twitter</li></ul></li></ul><ul id="525cd081-d5b0-4524-b3fe-09af8957266f" class="bulleted-list"><li style="list-style-type:disc">Newsletter o blog</li></ul><ul id="bd2a6d8f-8227-4a2e-872e-0b1087f69283" class="bulleted-list"><li style="list-style-type:disc">Radio</li></ul></div></div><hr id="094fab42-80a3-481e-ae47-c72bf3e51102"/><h1 id="7353deb3-bd83-40bf-8f28-5d8e6f361c59" class="block-color-orange_background"><mark class="highlight-brown"> 1. Análisis de la situación actual</mark></h1><h2 id="fd4a592b-d210-4081-a1d1-bc0933b0d728" class="block-color-blue_background"> a. Aspectos generales</h2><ul id="5b669516-6011-45c3-821f-73c614c1e0cb" class="bulleted-list"><li style="list-style-type:disc">Centro de estudios integral especializado en nuevas tecnologías</li></ul><ul id="e5fb3901-5b9c-41bc-bf6e-54834c0acee9" class="bulleted-list"><li style="list-style-type:disc">30 Trabajadores entre profesorado, marketing…</li></ul><ul id="4cf889e4-78c9-4f99-a24b-1784f902e56e" class="bulleted-list"><li style="list-style-type:disc">Misión: Mejora de la empleabilidad.</li></ul><ul id="6faf7092-930a-4adf-ba79-fc933edfab5b" class="bulleted-list"><li style="list-style-type:disc">Visión: Ser una Academia de referencia a nivel Nacional e internacional.</li></ul><ul id="8a09f2a7-3bf7-4449-a331-82b5e4d69001" class="bulleted-list"><li style="list-style-type:disc">Valores: Apostamos por el conocimiento técnico y responsable de las nuevas tecnologías.</li></ul><h2 id="471c917c-e82b-4df0-9aff-d7dc43264a60" class="block-color-blue_background"> b. Monetización</h2><ul id="55d0229c-b141-41fb-9196-83a9b51e9cd7" class="bulleted-list"><li style="list-style-type:disc">Cursos y talleres específicos.</li></ul><ul id="901406a5-dfc3-48fc-af5f-f89ff454ec3e" class="bulleted-list"><li style="list-style-type:disc">Fondos estatales y Europeos para formación de personas en desempleo.</li></ul><ul id="3cf61e46-a264-47a9-be59-c5e6749c6c34" class="bulleted-list"><li style="list-style-type:disc">Monetización en redes sociales con contenido exclusivo.</li></ul><ul id="d55ff977-7e03-4df3-acb1-fc2031d22b87" class="bulleted-list"><li style="list-style-type:disc">Certificaciones de profesionalidad / Microsoft, JAVA, Amazon…</li></ul><ul id="babf31e1-8bdc-41ff-94d4-8d1c6551a222" class="bulleted-list"><li style="list-style-type:disc">Publicidad en medios. </li></ul><h2 id="94114ee2-5550-4001-96e1-96c8158e8ae9" class="block-color-blue_background"> c. Investigación de las tendencias en el sector</h2><ul id="ce903dcc-2386-4f97-ba8e-c7f26c58576c" class="bulleted-list"><li style="list-style-type:disc">El sector de nuevas tecnologías es uno de los que más auge tiene mundialmente.</li></ul><ul id="f1e78eb2-36a5-458e-b13a-c485ec69943e" class="bulleted-list"><li style="list-style-type:disc">Con la Globalización digital podemos ofrecer cursos especializados con profesionales de todo el mundo.</li></ul><h2 id="7fb486bc-ac91-4bf8-b876-499d406cf541" class="block-color-blue_background"> d. Océano azul</h2><ul id="aa6ae600-8735-48ee-a4b9-28bdc39cb38c" class="bulleted-list"><li style="list-style-type:disc">Promocionarnos nuestros cursos a distancia en entornos de la <strong>España vaciada y el mundo rural.</strong></li></ul><h2 id="a5715c08-bfa2-4ed5-a2b3-8d5b1c2b1d37" class="block-color-blue_background"> e. Factores PESTEL</h2><table id="ee9fc876-f002-43fc-a66a-e4adac4a2593" class="simple-table"><tbody><tr id="d9a51b3b-2bdf-4bb7-a589-f2bbf000b3e5"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Político:</th><td id="CejI" class="block-color-default" style="width:617px">Ayudas publicas.</td></tr><tr id="27e09f3b-1d71-43e4-954f-917b7a6081f1"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Económico:</th><td id="CejI" class="block-color-default" style="width:617px">Todos los empleos tienden a la digitalización.</td></tr><tr id="acf1ea0b-afa5-46b3-91d4-2141f83efd15"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Factores Sociales:</th><td id="CejI" class="block-color-default" style="width:617px">Necesidad de adaptarse y renovarse ante el panorama actual de constante evolución.</td></tr><tr id="17ba3757-6f56-4b97-870b-f33afbd1e055"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Tecnológico: </th><td id="CejI" class="block-color-default" style="width:617px">Infraestructuras digitales mas amplias y la accesibilidad de equipos informáticos.</td></tr><tr id="c22167f1-8c9e-446b-b40d-64766a537fed"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Ecológico:</th><td id="CejI" class="block-color-default" style="width:617px">No nos afecta especialmente nuestro entorno.</td></tr><tr id="7c84d6cc-f21f-4fdd-8174-a827f5ddf2cc"><th id="QYc?" class="block-color-blue_background simple-table-header" style="width:131px">Legislativo: </th><td id="CejI" class="block-color-default" style="width:617px">Leyes copyright y protección de datos personales</td></tr></tbody></table><h2 id="7c2d2c38-3538-4e92-9283-b06cfd3fc274" class="block-color-blue_background"> f. DAFO</h2><div id="a758f42e-85be-4084-9bbd-dff71b4b9ddc" class="column-list"><div id="d2341825-c046-45b1-9585-a879ca7d4468" style="width:43.75%" class="column"><figure id="6af0a791-bab8-43eb-9788-538bff07f7bf" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/DAFO_Academia.jpg"><img style="width:432px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/DAFO_Academia.jpg"/></a></figure></div><div id="608b98c7-03fe-48f8-ab26-5500760f5f64" style="width:56.25%" class="column"><table id="aeb51f84-f6f8-46ff-8e83-a25ba95e0923" class="simple-table"><tbody><tr id="5a14da00-a938-4aa6-8549-a3a7363a5c89"><td id="SLlL" class="block-color-blue_background" style="width:272px"><strong>Debilidades</strong></td><td id="NSvU" class="block-color-blue_background" style="width:267px"><strong>Amenazas</strong></td></tr><tr id="f180f7e9-e5b9-489b-b70e-dcc5c79d632e"><td id="SLlL" class="" style="width:272px">Menos presupuesto que otras empresas
+Poco tiempo en el sector
+Falta de experiencia 
+No tenemos cartera de clientes</td><td id="NSvU" class="" style="width:267px">Crecimiento del precio de la energía
+Formaciones gratuitas/intrusismo
+Competidores muy fuertes</td></tr><tr id="55d5d1bc-bfa1-42f0-aed3-effcdc173209"><td id="SLlL" class="block-color-yellow_background" style="width:272px"><strong>Fortalezas</strong></td><td id="NSvU" class="block-color-yellow_background" style="width:267px"><strong>Oportunidades</strong></td></tr><tr id="f2adcc40-4610-46f5-a7ac-dba5a892970f"><td id="SLlL" class="" style="width:272px">Gama de productos amplia
+pocos gastos en instalaciones
+Sector estratégico
+Poco impacto en el medio ambiente
+Mayor acceso a recursos financieros
+Precios muy atractivos</td><td id="NSvU" class="" style="width:267px">Crecimiento rápido del mercado
+Mejores proveedores
+La gente quiere reciclarse con las nuevas tecnologías
+Centrarnos en la España rural</td></tr></tbody></table></div></div><h2 id="4d89dfe2-af78-4882-8b38-9096c0961616" class="block-color-purple_background">g. Bussiness model canvas</h2><figure id="40948bbc-99fa-41fc-a873-8c4ec3f6c3ea"><div class="source"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/canvas.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/95d186ee-6572-4b76-972d-91601f50d8b0/canvas.pdf</a></div></figure><hr id="edcfbc67-dea6-4d3b-8ea1-329f08e40d94"/><h1 id="dd4c38b0-3389-4586-9e88-babdc157f7b9" class="block-color-red_background"><mark class="highlight-brown"> 2. Análisis de competencia</mark></h1><p id="a45333ec-bb3e-4bba-b6b9-463089a8ea05" class="">Hemos escogido estas 5 empresas a analizar, siendo potentes en su calidad de enseñanza, sea para preparar adecuadamente la oposiciones, como Cursos de Formación Profesional de grado medio y/o superior, como cursos de mejora de la empleabilidad financiados por el gobierno de Cantabria, el fondo Europeo</p><h2 id="4163b769-ad03-4918-a24a-968e849d2fd9" class="">a. Benchmark</h2><figure id="0c8353db-0f10-4eb1-97cf-08f8a438970b"><div class="source"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Benchmark-competencia.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/4ec6fd7f-dbe6-4451-b95a-1f9386c315eb/Benchmark-competencia.xlsx</a></div></figure><h2 id="8e344ddf-5ca3-45e6-89ce-c5c68ef49cd9" class="">b. Análisis de canales digitales (competencia)</h2><ul id="e4bae69a-7a6a-4155-9b98-f2d97fdf79d5" class="bulleted-list"><li style="list-style-type:disc"><strong>Fraile y blanco </strong><ul id="6f04facf-5d24-4b10-98c0-f207ea041cf1" class="bulleted-list"><li style="list-style-type:circle">Empresa independiente</li></ul><ul id="0e7f3f1f-c5c9-4cc6-a53d-3204954ccc8d" class="bulleted-list"><li style="list-style-type:circle">Tienen una web poco atractiva y poco intuitiva, sin mucha información. Tiene RRSS pero no sube contenido, y tiene el blog desactualizado. Creo que podríamos hacer las cosas mejor en el tema web y no parece difícil superarle en Google con una buena estrategia de contenido. Podemos destacar mucho más que él en RRSS.</li></ul></li></ul><ul id="c3e2eaab-1ef0-4daf-b93e-4b995ae60924" class="bulleted-list"><li style="list-style-type:disc"><strong>Academia Emprende</strong><ul id="34090ede-262c-414f-8f41-920b22669c5f" class="bulleted-list"><li style="list-style-type:circle">Empresa privada con fondos públicos</li></ul><ul id="265a4349-8902-4629-a690-29c259a422cc" class="bulleted-list"><li style="list-style-type:circle">La página web tiene buena pinta a priori, pero está algo &quot;rota&quot; en algunos sitios. Tiene contenidos desactualizados, y cursos sin especificar fecha. A parte los elementos de su página es excesivamente grande, como si sólo fuesen a ser vistos en móviles y tablets. Los espacios entre artículos son muy grandes.</li></ul></li></ul><ul id="312dd9ad-997f-48bf-a62b-4aad1dfa5e81" class="bulleted-list"><li style="list-style-type:disc"><strong>Alpe Formación</strong><ul id="e11ef6e3-99ac-4516-a7db-c9f10bbeb497" class="bulleted-list"><li style="list-style-type:circle">Empresa privada con fondos públicos</li></ul><ul id="fbf2728b-162f-43a2-99ee-827cc4ec9e4f" class="bulleted-list"><li style="list-style-type:circle">Es una página web buena, y adaptada. Tiene secciones bien diferenciadas y es concisa.</li></ul></li></ul><ul id="f49616a8-73c4-4e93-bb0f-8850c867a127" class="bulleted-list"><li style="list-style-type:disc"><strong>Códice Cantabria</strong><ul id="e9ab3703-0082-4eaf-88cb-a6ef4f50ddc0" class="bulleted-list"><li style="list-style-type:circle">Empresa privada con Fondos públicos</li></ul><ul id="2c7ccfec-0d75-4543-8903-df5240eaf6c0" class="bulleted-list"><li style="list-style-type:circle">Página web sencilla, con un tamaño de fotos inmenso. Su carrusel superior es muy rápido y distrae mucho la atención.</li></ul></li></ul><ul id="be1e41b7-2656-49fe-8048-2474dbaac56a" class="bulleted-list"><li style="list-style-type:disc"><strong>Silicon Formación</strong><ul id="3062c1fe-ca13-4753-aa98-d475225ab25e" class="bulleted-list"><li style="list-style-type:circle">Empresa privada con fondos públicos</li></ul><ul id="21e89082-61a6-4f3c-99b8-d2393e5a85f7" class="bulleted-list"><li style="list-style-type:circle">Una página web anticuada, poco intuitiva y tamaño de las imágenes e iconos muy grande.</li></ul></li></ul><h2 id="50475a14-6b43-42b6-ae7b-790edb3b36e2" class="">c. Conclusiones de la competencia</h2><div id="9f148071-5086-4ca2-bf07-c7b86e45c57f" class="column-list"><div id="501087b8-c583-4633-a9e5-447aaf6e205d" style="width:62.5%" class="column"><ul id="045618fc-095d-44ef-a630-b08fc064c74a" class="bulleted-list"><li style="list-style-type:disc"><strong>Fraile y blanco </strong><p id="c4f83ace-8988-48e2-9523-9cae4d83f33d" class="">Empresa de diseño gráfico a cual ofrece formaciones a través del S.E.P.E, no explica en ningún momento formaciones o cursos o talleres de forma privada. No supone ningún riesgo de competencia</p></li></ul></div><div id="650fb11c-6294-4c4e-b79e-cd8e1a416511" style="width:37.50000000000001%" class="column"><figure id="8a8476c9-4f87-4e26-86de-9c33e80783b4" class="image"><a href="https://fraileyblanco.com/imagenes/personalizadas/logo.png"><img src="https://fraileyblanco.com/imagenes/personalizadas/logo.png"/></a></figure></div></div><div id="a6dda320-ef3d-410c-93e1-e2b5d890766c" class="column-list"><div id="3c2e6e5b-b45e-4c67-b1b5-71714cbda57a" style="width:56.25%" class="column"><ul id="be289eed-ab6b-4dde-ba9d-d0415a290a6f" class="bulleted-list"><li style="list-style-type:disc"><strong>Academia Emprende</strong><p id="5444ee3f-78df-4aaf-acc0-f5f7505b1733" class="">Empresa privada de Oposiciones con formaciones financiadas por el S.E.P.E. .no ofrece cursos realmente específicos de pago en cuanto a informática u ofimática, las redes sociales las tiene uy abandonadas y descuidadas, con lo que con un buen plan de márketing digital, podemos posicionarnos fácilmente por encima de ellos.</p></li></ul></div><div id="bee767e4-3620-4700-8d22-a3c755bede04" style="width:43.74999999999999%" class="column"></div></div><div id="ac5f2f88-d581-43fd-a2b7-4fb064fa5b5a" class="column-list"><div id="b15065a1-d1c9-4a8e-9c14-46fd68d8e26e" style="width:68.75%" class="column"><ul id="e2ef21d1-ee76-47a9-a4de-bb50d6413772" class="bulleted-list"><li style="list-style-type:disc"><strong>Alpe Formación</strong><p id="0ff7819a-753f-45dc-bfa5-bedb78f0b978" class="">Empresa privada muy conocida localmente por sus cursos continuos de oposiciones, que también ofrece cursos tanto de pago como subvencionados de informática, bases de datos… al ser tan potente en Cantabria, será un buen competidor</p><p id="ec72be9b-9a56-4e8c-8102-926ef24e8a0b" class="">
+</p></li></ul></div><div id="9dfc1f26-9318-4b3d-a559-aa9f33f9f2b7" style="width:31.25%" class="column"><figure id="3e03bdfd-078b-4900-8bfa-1dd1a8f8d6e6" class="image"><a href="https://www.alpeformacion.es/wp-content/uploads/2019/08/logotipo-alpe-formacion.png"><img style="width:192px" src="https://www.alpeformacion.es/wp-content/uploads/2019/08/logotipo-alpe-formacion.png"/></a></figure></div></div><div id="c9786a3b-1e7b-45fd-823b-73235ad37312" class="column-list"><div id="e56337f6-2463-42c6-96a5-5c24a4f84026" style="width:50%" class="column"><ul id="61c9c2fe-850a-4b65-9e8c-b700b59a9095" class="bulleted-list"><li style="list-style-type:disc"><strong>Campus Training</strong><p id="657fb6b4-fa4d-44f0-b4d3-c095f857dac3" class="">Empresa privada muy potente que ofrece tanto formaciones subvencionadas, como titulaciones universitarias, como formación para oposiciones DEL ESTADO, con lo cual es una academia muy, muy potente, ya que ya tiene tablas en lo que es nuestro proyecto</p></li></ul></div><div id="5695fc7e-2b1d-4b69-b8d9-a45ecfa2e734" style="width:50%" class="column"><figure id="3eda6c60-0e92-4ce5-8969-da091fbdcd7d" class="image"><a href="https://www.campustraining.es/wp-content/themes/esgalla_new/img/logotipo-campus-training.png.webp"><img src="https://www.campustraining.es/wp-content/themes/esgalla_new/img/logotipo-campus-training.png.webp"/></a></figure><p id="1b4e4dc4-ff0b-47d7-83a8-fd5fa8f0bd4e" class="">
+</p></div></div><div id="ceeffa7e-a978-4dfd-9a1c-f691e24f21ef" class="column-list"><div id="67a9a1dc-87e9-4ffd-bb45-1b0c3dbfd96e" style="width:50%" class="column"><ul id="9858b1a9-500c-478e-b5a2-e8ec3c22e34f" class="bulleted-list"><li style="list-style-type:disc"><strong>Códice Cantabria</strong><p id="8f4e10d1-6d22-4dca-a334-96069eab9fb8" class="">Empresa privada conocida localmente por sus cursos continuos de oposiciones de todo tipo, que también usa fondos Europeos para formaciones variadas, aunque no lo tienen visible en ningún momento, con lo que sería un buen competidor en lo que a oposiciones se refiere, pero muy débil en lo que a formaciones se refiera</p><p id="471398f0-3d92-4db8-9956-5d253b04ab29" class="">
+</p></li></ul></div><div id="8da3ef23-13c3-4cd1-997c-0038fb0400a2" style="width:50%" class="column"><figure id="a78fdd5a-aa9d-4055-9cba-63e16d3bb913" class="image"><a href="https://www.codicecantabria.com/wp-content/uploads/2019/08/codice.svg"><img style="width:720px" src="https://www.codicecantabria.com/wp-content/uploads/2019/08/codice.svg"/></a></figure></div></div><div id="003b35f3-d50d-4c35-9777-4de3f77449c7" class="column-list"><div id="66f5b89f-97a1-454a-8f68-eedc43ce568c" style="width:50%" class="column"><ul id="4fe4bff7-162f-42fe-83fd-8a7f4f3bc965" class="bulleted-list"><li style="list-style-type:disc"><strong>Silicon Formación</strong><p id="7798f0ac-16d3-432a-adfc-22fe3a60c066" class=""> es una academia dentro de una tienda llamada silicon sistemas que sólo ofrece formaciones subvencionadas y extremadamente escasas. al ser una academia tan pequeña y promocionándose de forma tan pobre, no supondrá ninguna competencia</p></li></ul></div><div id="eef7a44a-3096-4075-aa51-1ceec1dad70a" style="width:50%" class="column"></div></div><hr id="7e9bf3fc-dc1d-4962-897c-9f5a7a6cf657"/><h1 id="19f9563a-763e-4e44-b672-34883c37bfd3" class="block-color-red_background">3. <mark class="highlight-brown">Estudio de Cliente</mark></h1><h2 id="03dfc62d-2df7-4d80-b146-fd5fd3413d42" class="block-color-orange_background">a. Customer Personas</h2><h3 id="10b416cf-80f1-492a-aff1-c35cecb924d2" class="">1. Opositor</h3><p id="02b0b724-915c-46ea-bddc-be73b9fbdfcf" class=""><strong>¿QUIÉN Y CÓMO ES NUESTRO CLIENTE?</strong></p><table id="98bd5f20-4961-483d-8c47-9a5fbf9a50c6" class="simple-table"><tbody><tr id="609e3770-1f6b-4d09-bd6a-7afa755b507e"><th id="YniV" class="simple-table-header-color simple-table-header" style="width:166px">Datos generales</th><td id="^CTx" class="" style="width:494px">  Joven ha acabado sus estudios universitarios y busca estabilidad</td></tr><tr id="4beab97b-52bc-4e10-bc4b-3ad7db168edd"><th id="YniV" class="simple-table-header-color simple-table-header" style="width:166px">Estilo de vida</th><td id="^CTx" class="" style="width:494px">  Contemporáneo, suele estar en paro o en trabajos de media jornada, tiene
+  un perro.  </td></tr><tr id="b891620e-848e-4429-b963-d41fd468151c"><th id="YniV" class="simple-table-header-color simple-table-header" style="width:166px">Gustos y aficiones</th><td id="^CTx" class="" style="width:494px">  Les gusta estar informados, estar con sus amigos y de fiesta, pero son unas personas con metas claras. </td></tr><tr id="351f1574-c0a6-44e3-ac2d-5b4f53808de9"><th id="YniV" class="simple-table-header-color simple-table-header" style="width:166px">Motivaciones y sueños</th><td id="^CTx" class="" style="width:494px">  Tener un trabajo estable y cierta tranquilidad para formar un hogar.</td></tr><tr id="a696925c-8f3b-4b26-ac26-22f54722c5a8"><th id="YniV" class="simple-table-header-color simple-table-header" style="width:166px">Un día en su vida</th><td id="^CTx" class="" style="width:494px">  Se levante, busca trabajo, mira ofertas, pasea al perro, come, estudia
+  todo la tarde, escucha música, cena, vuelta al perro y a dormir. </td></tr></tbody></table><p id="84d2db37-c754-4ec6-9e75-0226995704f0" class=""><strong>¿CÓMO ACTÚA NUESTRO CLIENTE CON NOSOTROS?</strong></p><table id="c37d0056-d844-495c-a2bf-149c7645dd23" class="simple-table"><tbody><tr id="380ba11f-71b3-453a-a8e6-9c26550232e5"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">  Problema /  Dolor  </th><td id="mMlI" class="" style="width:498px">No tiene estabilidad económica y las expectativas no son buenas, quiere un puesto fijo sin sustos.</td></tr><tr id="e433e63e-005a-4c52-aa97-27eae3baac50"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px"> ¿Cómo resuelve ese problema?</th><td id="mMlI" class="" style="width:498px">Estudiando mucho y centrándose mucho en su meta de conseguir una plaza pública.</td></tr><tr id="29d03df5-277d-45c2-a844-d07356d55750"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">¿Qué busca en nuestro producto?  </th><td id="mMlI" class="" style="width:498px">Asesoramiento, y un conocimiento extra de los contenidos de cada tema de la oposición.  </td></tr><tr id="712ebc9e-f401-4f95-a299-d924219618c6"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">¿Dónde busca Información?</th><td id="mMlI" class="" style="width:498px">Información, internet, boca a boca.</td></tr><tr id="d0e9ade9-f4cf-49c9-ac8e-e3dc1d338dc0"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">¿Cómo es el  proceso de compra?</th><td id="mMlI" class="" style="width:498px">  Ponerse en contacto con nosotros, concretar una cita online donde
+  detallemos todos los aspectos de nuestra formación. Sin compromiso.</td></tr><tr id="e7cc952c-4607-4f55-a2d6-9ee95736c92e"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">¿Influenciadores?</th><td id="mMlI" class="" style="width:498px">Amigos, conocidos, familiares, anuncios en internet</td></tr><tr id="20d5803a-3aad-45af-ac4d-9a023c9a1c3c"><th id="YB=c" class="simple-table-header-color simple-table-header" style="width:163px">¿Objeciones?</th><td id="mMlI" class="" style="width:498px">Que sea caro, ineficiente, que sea más lento de lo que uno desee.</td></tr></tbody></table><h3 id="6e43e7e2-6326-4bb5-afc0-dea3bc67972a" class="">2. Estudiante nuevas tecnologías</h3><p id="de8bddf8-1a42-4ac5-b3a3-a06d069e6038" class=""><strong>¿QUIÉN Y CÓMO ES NUESTRO CLIENTE?</strong></p><table id="8197ad65-c72f-48a8-9ee9-17f4b2c60f88" class="simple-table"><tbody><tr id="44c584af-ebab-4d8a-95d3-dbdd0764cc39"><th id="S`JC" class="simple-table-header-color simple-table-header" style="width:168px">Datos generales</th><td id="daIQ" class="" style="width:518px"> Joven de 18 años quiere mejorar su ámbito rural</td></tr><tr id="f7f5346c-6276-4857-8b06-e587465c8886"><th id="S`JC" class="simple-table-header-color simple-table-header" style="width:168px">Estilo de vida</th><td id="daIQ" class="" style="width:518px">Entorno tradicional, inquietudes de mejorar lo que tiene alrededor, ayuda a sus padres en la panadería.  </td></tr><tr id="ceb7bc9a-bc55-46a5-a85b-48d8ab3c2175"><th id="S`JC" class="simple-table-header-color simple-table-header" style="width:168px">Gustos y aficiones</th><td id="daIQ" class="" style="width:518px">Le gusta TikTok, leer el Marca, hacer el tonto con los amigos, la jardinería. </td></tr><tr id="09e3dc26-d8be-4944-af4f-3d2ed0490350"><th id="S`JC" class="simple-table-header-color simple-table-header" style="width:168px">Motivaciones y sueños</th><td id="daIQ" class="" style="width:518px">Quiere mejorar el negocio familiar, y darle una salida online. </td></tr><tr id="9a7035dc-c211-4a2a-b343-809580e727c0"><th id="S`JC" class="simple-table-header-color simple-table-header" style="width:168px">Un día en su vida</th><td id="daIQ" class="" style="width:518px">Se levanta, va a clase (está terminando los estudios), come, ayuda a la familia en la panadería, por la noche sale con los amigos, cena y a dormir. </td></tr></tbody></table><p id="fca7b843-2971-4f02-b24d-45741a848e03" class=""><strong>¿CÓMO ACTÚA NUESTRO CLIENTE CON NOSOTROS?</strong></p><table id="285929d9-05ec-4d6c-bb71-b4d1d363955a" class="simple-table"><tbody><tr id="cda5bf1e-53a0-4943-af0b-e022ef4c4cb5"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">Problema / Dolor</th><td id="yMOT" class="" style="width:478px">Quiere hacer una carrera que no se puede costear </td></tr><tr id="8bfba1c6-0510-4232-b301-0e7916d78d9b"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Cómo resuelve ese problema?</th><td id="yMOT" class="" style="width:478px">Estudiando, sacando buenas notas. Ahorrando lo que le dan sus padres</td></tr><tr id="bb1ad242-b28e-4fda-8922-3080814e9404"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Qué busca en nuestro producto?</th><td id="yMOT" class="" style="width:478px">Unas formaciones oficiales que él sí puede asumir  </td></tr><tr id="f67bad62-2d87-4b9b-a448-6ab351b57967"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Dónde busca información?</th><td id="yMOT" class="" style="width:478px">Internet, RRSS </td></tr><tr id="fccd4ce0-ac02-4cf1-b0e1-4553a4f89c50"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Cómo es el proceso de compra?</th><td id="yMOT" class="" style="width:478px">Ponerse en contacto con nosotros, concretar una cita online donde detallemos todos los aspectos de nuestra formación. Sin compromiso.</td></tr><tr id="9dda7f69-a145-4e79-946d-a93959937e9c"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Influenciadores?</th><td id="yMOT" class="" style="width:478px">Información en RRSS, boca a boca, reseñas, los padres, videos de alumnos</td></tr><tr id="9bbd5c51-4e2f-4a43-8d54-090f569d2931"><th id="Dq^`" class="simple-table-header-color simple-table-header" style="width:233px">¿Objeciones?</th><td id="yMOT" class="" style="width:478px">Que no le sirva para salir / mejorar su situación o su entorno</td></tr></tbody></table><figure id="de7759ba-cff1-455f-9d96-7923a5fe078e" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled.png"><img style="width:656px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled.png"/></a></figure><figure id="67c2e792-7494-4378-9ad5-fed629380bf1" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%201.png"><img style="width:654px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%201.png"/></a></figure><h2 id="0b03a69a-6cc9-40b7-b523-428d52d6922f" class="block-color-orange_background">b. <mark class="highlight-brown">Mapa de empatía</mark></h2><figure id="89ecb6b4-b1d1-4e6e-ae5c-647c8cdc54f2" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Empathy_Map_Helena.jpg"><img style="width:960px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Empathy_Map_Helena.jpg"/></a></figure><figure id="86c178e8-636b-4ac3-b37f-d2b7ca54ff5e" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Empathy_Map_Toms.jpg"><img style="width:960px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Empathy_Map_Toms.jpg"/></a></figure><h2 id="669817c7-68db-44ae-915e-27e3e1369263" class="block-color-orange_background">c. <mark class="highlight-brown">Conclusiones</mark></h2><p id="a219be55-8a8a-4ae4-94dd-08be528f5478" class="">Ya que ofertamos cursos tanto subvencionados como de forma privada, podemos cubrir las necesidades de todo tipo de usuarios en materia de nuevas tecnologías, ofreciendo modos de financiación, cuando el curso lo pida, adaptables a las necesidades y recursos de cada estudiante potencial.</p><p id="f59c02ee-f707-47ca-9a7b-e59d99b4fa62" class="">Por ejemplo, a la opositora se le puede pedir un pago mensual por las clases y apuntes, mientras que al estudiante de FP se le pueden pedir tanto pagos anuales, como trimestrales, mensuales o por módulos o certificaciones específicas  por transferencia bancaria, o, incluso, Bizum</p><h3 id="fb8ffa7f-0be6-46bd-a337-ed4c3e4e856c" class="">¿Qué mensajes o argumentos de venta podríamos utilizar con estos clientes?</h3><ul id="dd31cc93-59f7-42eb-8bbd-d73d00220528" class="bulleted-list"><li style="list-style-type:disc"><strong>Helena</strong><ul id="2fde9d23-509b-41da-8d4a-8cbf535badde" class="bulleted-list"><li style="list-style-type:circle">“Lánzate a tu puesto de trabajo fijo”</li></ul><ul id="8289f33f-4655-459f-be60-0d2a4e12e516" class="bulleted-list"><li style="list-style-type:circle">“Aprueba fácilmente con nuestra metodología adaptada”</li></ul></li></ul><ul id="00d7f01e-b794-40ac-a479-b8da52b955d8" class="bulleted-list"><li style="list-style-type:disc"><strong>Tomás</strong><ul id="8680c68a-02f3-4705-bd0a-3dbe2e770544" class="bulleted-list"><li style="list-style-type:circle">“Formarse para el cambio”,</li></ul><ul id="4d0ca92c-ef0d-42a1-85b2-810ef16b1db1" class="bulleted-list"><li style="list-style-type:circle">“Formar trabajadores del mañana”,</li></ul><ul id="eafbeedf-41e3-4e17-908d-811089967d67" class="bulleted-list"><li style="list-style-type:circle">“Te damos las mejores herramientas para el emprendimiento”</li></ul></li></ul><h3 id="91aeaf3b-beb8-490e-a02c-8b062c06bee5" class="">¿Añadimos algún producto / servicio extra a nuestra oferta?</h3><ul id="e98e846c-0592-4165-ba2d-b79277acf56a" class="bulleted-list"><li style="list-style-type:disc">Dar clases de memorización y asimilación gratuitas al contratar nuestros servicios al cabo de x meses (¿2?, ¿3?).</li></ul><ul id="ee7620d2-3f0c-4644-92fc-bb32c299e43c" class="bulleted-list"><li style="list-style-type:disc">Ofrecer un acompañamiento y asesoramiento ante la posibilidad de emprendimiento por un módico precio</li></ul><hr id="f553f606-11ef-49f1-95fe-d30b662dac3a"/><h1 id="3627c1a2-894c-4f1f-af75-fc0566bf2964" class="">4. Marketing basics</h1><h2 id="74504951-34c3-41fd-a160-b9216a15eaad" class="block-color-orange_background">a. Posicionamiento</h2><p id="8b184b2a-8ac6-4a79-8429-ee9edf447209" class="">Nos queremos posicionar como <strong>especialistas</strong> en nuevas tecnologías y digitalización <strong>a distancia</strong>, con la <strong>mayor oferta</strong> en las formaciones en este sector. </p><h2 id="99c231c9-5c26-4700-98ca-240e06edc452" class="block-color-yellow_background">b. Marketing Mix</h2><h3 id="8467d5a2-3a2b-41a9-98cf-75fd7f79107c" class=""> I. Producto/valor al cliente</h3><ul id="bbc98f7d-c35c-442f-bc84-bda99d9455b3" class="bulleted-list"><li style="list-style-type:disc"><strong>Producto: </strong>Formación online especializada en informática y nuevas tecnologías, tanto de oposiciones, charlas/talleres magistrales y divulgación</li></ul><ul id="e1e4807b-397b-412d-8293-b527a2586beb" class="bulleted-list"><li style="list-style-type:disc">Dirigido a dos nichos principales de mercado: personas que viven en entornos rurales que desean mejorar su empleabilidad y la de su entorno, y opositores que buscan una estabilidad laboral.</li></ul><ul id="0830bd0d-85a6-4604-b27e-e99a9ebeb69a" class="bulleted-list"><li style="list-style-type:disc">Al ser online, no tienen que desplazarse de su entorno para recibir formación de calidad, sin renunciar a su actual ocupación</li></ul><ul id="ddc7b503-bbbb-45e3-ad97-fb7a9164c141" class="bulleted-list"><li style="list-style-type:disc">Diferenciación: nuestra amplia oferta de calidad de formaciones online y la flexibilidad de pago.</li></ul><ul id="b293a379-d204-4599-b692-e86e3d3ccb14" class="bulleted-list"><li style="list-style-type:disc">Servicio de bolsa de empleo especializada y acompañamiento online al alumno durante y después de su formación</li></ul><ul id="6c1b9db4-5906-49eb-a7d5-20cdbe32d0b8" class="bulleted-list"><li style="list-style-type:disc">Experiencia del cliente: cercana y fluida.</li></ul><ul id="272759bc-aa40-42df-9ee2-3067123e796d" class="bulleted-list"><li style="list-style-type:disc">Touchpoints clave:<ul id="19c79ba6-73b4-43d3-9336-3864c2d113ec" class="bulleted-list"><li style="list-style-type:circle">Contacto inicial vía mail, redes sociales, o formulario web</li></ul><ul id="ec844399-4ffd-41a2-9cdb-59a5e200cf4a" class="bulleted-list"><li style="list-style-type:circle">Reunión online (zoom Meeting) informativa.</li></ul><ul id="55fb994c-9c72-4fe7-8b43-0404cf94c94d" class="bulleted-list"><li style="list-style-type:circle">Presentación de presupuesto, condiciones y formas de pago</li></ul><ul id="38a2471b-6f1d-40f8-a7bd-d6b77559f2c1" class="bulleted-list"><li style="list-style-type:circle">Contacto continuo a través de las clases online, foros, email, tanto con el profesorado como con la administración</li></ul><ul id="84a94d60-50d3-4606-9b36-d543e916456c" class="bulleted-list"><li style="list-style-type:circle">inclusión en la bolsa de empleo, con entrevista formal de trabajo para crear el perfil del alumno con sus competencias</li></ul></li></ul><h3 id="f38e6429-fa29-4cd4-ad18-1892e101bba6" class="">II. Precio/coste</h3><ul id="22e3e429-9cca-44e5-a2cd-e78ba0682c64" class="bulleted-list"><li style="list-style-type:disc">En el caso de oposiciones, es fijo mensual, en el caso de la demás formaciones y talleres serán flexibles o subvencionados por el estado </li></ul><ul id="e9c7791e-7b14-4813-8f3d-f46a5da6a59c" class="bulleted-list"><li style="list-style-type:disc">Dependiendo de los servicios contratados, el precio final será fijo, lo que damos es la facilidad y flexibilidad de pago a lo largo de la formación, si es necesario el pago.</li></ul><ul id="d3d104fd-864b-4f9d-b34d-1313e75851c0" class="bulleted-list"><li style="list-style-type:disc">la posibilidad de la gratuidad de nuestras formaciones subvencionadas frente a otros competidores a partir de becas.</li></ul><h3 id="b8d18ae7-9ab2-49d8-9532-b8f024513f48" class="">III. Promoción / comunicación</h3><ul id="d0b502de-8a83-42b8-9a5e-7205eaf593d1" class="bulleted-list"><li style="list-style-type:disc">Outbound: redes sociales, página web, radio, portales de búsqueda de empleo, boca a boca.</li></ul><ul id="5152db07-f320-4eae-b9bd-815fb3fe796c" class="bulleted-list"><li style="list-style-type:disc">Inbound: Newsletter con los emails de alumnos e interesados sobre nuevas formaciones y talleres, y ofertas de empleo que tengamos en bolsa</li></ul><ul id="b17ed557-e3ab-4d7c-95b3-ed9968bab398" class="bulleted-list"><li style="list-style-type:disc">Participación en eventos locales de divulgación o ferias de empleo</li></ul><h3 id="64253430-43bc-4a09-8672-499b58070d97" class="">IV. Punto de venta / Conveniencia</h3><ul id="ef09ca3b-3d8c-4ebe-9418-7e6bd223a989" class="bulleted-list"><li style="list-style-type:disc">Vía web, intranet con foros, emails, llamadas.</li></ul><ul id="96322d5d-346a-4cb2-84b3-bda1dc5a4c12" class="bulleted-list"><li style="list-style-type:disc">Reuniones vía online (zoom)</li></ul><h2 id="8091e003-28a0-4286-a3a2-41203e2450f9" class="">c. Precios</h2><h3 id="0ba2ff41-34b3-41be-b161-13b07a899d32" class="">¿Cómo vas a fijar los precios de tus productos / servicios? ¿Por qué?</h3><p id="4b384b39-99be-43ca-bac9-0151f521d089" class="">Por competencia, haciendo estrategia de penetración, estableciendo precios en el rango más bajo en comparación de nuestros competidores, e irlos subiendo paulatinamente, e incluso, dando una rebaja o un cupón de premio por buenas notas, o rapidez en terminar el curso, o incluso buena actitud y/o aptitud</p><ul id="47e6ddbd-ecf0-42da-9b4f-3720803f802a" class="bulleted-list"><li style="list-style-type:disc">Con las oposiciones, el precio sería un poco más bajo que nuestros competidores (35/ 100€), los primeros 3/6 meses, y luego iríamos subiendo poco a poco.</li></ul><ul id="27ef9911-906c-4be4-bf2a-02e6d138b414" class="bulleted-list"><li style="list-style-type:disc">En cuanto a las certificaciones, se da un precio fijo ligeramente mayor que la competencia, pero daríamos un cupón o descuento para otras formaciones relacionadas</li></ul><ul id="91a77a47-3a84-4f92-8c13-8abd280f4e71" class="bulleted-list"><li style="list-style-type:disc">Las charlas serían gratis, utilizadas como gancho para atraer a los posibles alumnos y fidelizar a los que ya tenemos, dando incluso la opción de elegir con los propios <strong>alumnos</strong> los conferenciantes de los que quieran saber datos específicos / estudio de casos que puedan aportar.</li></ul><p id="afe5dc83-239b-4031-a188-f26f9fae56ca" class="">
+</p><hr id="fab930ac-a1b5-47d0-b706-091c2ab77051"/><h1 id="b1102ff8-d40a-4264-a618-d4440ba7504a" class="">5. comunicación</h1><h2 id="cc50e5d4-74e9-4f3f-89d9-6d952afdda0a" class="">a. 3 factores psicológicos </h2><ul id="70d68973-be71-415b-889e-e29c3d16258e" class="bulleted-list"><li style="list-style-type:disc"><strong>Autoridad, Empatía</strong>: <ul id="533a7669-b9ac-4c54-b0d4-9e24c6a8480b" class="bulleted-list"><li style="list-style-type:circle">dejar ver referencias en la web sobre nuestros cursos, y en los cursos, resultados de encuestas de satisfacción y referencias tanto del curso como de los profesores, y de las empresas que han dado trabajo a nuestros alumnos.</li></ul><ul id="d2cc3c7c-1395-4a50-a17e-b03665db7d85" class="bulleted-list"><li style="list-style-type:circle">“el x% de nuestros alumnos encuentra trabajo con nuestras formaciones, gracias a la bolsa de empleo”</li></ul></li></ul><ul id="a6cfd8c1-ba96-4c03-8c71-2e0d27bb94a5" class="bulleted-list"><li style="list-style-type:disc"><strong>Compromiso:</strong> al pedir información sobre la formación o de detalles de pago, llamar a la semana para confirmar su interés.</li></ul><ul id="fa62ee33-2833-4935-9995-b01a291ad75c" class="bulleted-list"><li style="list-style-type:disc"><strong>Reciprocidad:</strong> Tras la formación, nuestros alumnos pueden optar a nuestra bolsa de empleo.</li></ul><h2 id="966fdc19-a296-44ec-b55c-f195eb2245a8" class="">b. Ejercicios Web</h2><h3 id="c378a174-7428-4958-8b2e-55758b20e704" class="">I. Portada</h3><figure id="0d819d3f-e70c-4784-b0d1-c59b6b4e1017" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/imagen_corporativa_-_inicio.jpg"><img style="width:1920px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/imagen_corporativa_-_inicio.jpg"/></a></figure><h3 id="deaf457b-ea5e-420d-9830-b80fcca2eb1e" class="">II. Quiénes somos</h3><figure id="e09df05e-bb3d-416d-b297-1a0b4a91e5ad" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/imagen_corporativa_-_quienes_somos.jpg"><img style="width:1920px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/imagen_corporativa_-_quienes_somos.jpg"/></a></figure><h2 id="4971329c-4ad4-4c61-b461-53945db79c71" class="">c. Storybrand</h2><div id="78d7d50f-e946-4812-89ff-707df4c5039e" class="column-list"><div id="2360acca-12e3-4669-8071-ed2f461725ed" style="width:18.75%" class="column"><figure id="9a300f66-b4b9-4230-8244-f85e03d8666a" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%202.png"><img style="width:158px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%202.png"/></a></figure></div><div id="c35b3e33-cc61-4c81-85c0-71f84addaae8" style="width:81.25%" class="column"><p id="b2823b28-7416-4f16-bac7-916795afec7c" class=""><em><strong>¿Quién es el protagonista? ¿Qué quiere?</strong></em></p><p id="d0817f85-e8ad-485c-ae9a-488031e312e3" class=""><em><strong>Algún deseo básico</strong></em></p><p id="fea06472-69bd-4f60-81ca-7949f11f9028" class=""><em>Estudiante de bachiller (Tomás) con pocos recursos.</em></p><p id="ad8b33ab-1f11-4afe-9a81-f24147f9a992" class=""><em>Deseo: Mejorar su entorno y modernizar su pueblo.</em></p><p id="85c5626e-b19d-4c9a-98fb-9260d4a1b7a8" class=""><em>Utilizando textos e imágenes del campus universitario</em></p></div></div><div id="95aaca4f-0428-456d-ac68-7c511bffb844" class="column-list"><div id="9b3ff28d-2e68-4154-801f-2706b1e9dd65" style="width:81.25%" class="column"><p id="14965b6d-79c3-4cd2-8844-c840808e754f" class=""><strong>VILLANO: La causa de los problemas.</strong></p><p id="a26e377b-ca74-4b63-9009-d41066b0ea0e" class=""><strong>Problemas:</strong></p><p id="45f1c6d5-fb5b-48da-8554-c7996f9386ce" class="">Desplazarse a la capital es muy caro.</p><p id="44178026-56e2-46e7-af4c-a371001c1dfc" class="">Si quiere ir a la Universidad tanto la matricula como el alojamiento, desplazamiento etc es demasiado caro.</p></div><div id="393f9d82-8651-448f-a5d5-2f7c60d627e0" style="width:18.749999999999993%" class="column"><figure id="3321a86c-28b0-42ea-829b-9f234cf2b52f" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%203.png"><img style="width:192px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%203.png"/></a></figure></div></div><div id="bd37bdd5-6697-4295-a59c-468fdcc1bc43" class="column-list"><div id="9e836b23-60d9-4ccc-bca3-9c71c138c796" style="width:18.75%" class="column"><figure id="94a63ebe-e1db-4f3c-bb29-d3d55ad4d6a8" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%204.png"><img style="width:158px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%204.png"/></a></figure></div><div id="074a6baa-5b26-4695-8858-6e2ace7c2c93" style="width:81.25%" class="column"><p id="4c5d4d0f-87a3-4de9-8e75-05882e519722" class=""><strong>Conoce a un guía (Tú)</strong></p><p id="19452eee-4b64-466b-b319-b03b3952cdac" class=""><strong>¿Qué le vas a decir para demostrar empatía y autoridad?</strong></p><p id="9cff7590-7539-4f72-b534-7f20557ab00a" class="">Estamos aquí para ayudarte.</p><p id="134982ef-7595-4475-b793-8b93fc9e8cbc" class="">Empatía: Conocemos tu problema, puedes obtener tu formación de forma más asequible y adaptada.</p><p id="07930a46-8eed-4896-8090-92c6b00dfefa" class="">Autoridad: Compartir testimonios de profesores y alumnos muy satisfechos.</p></div></div><div id="12546f27-e728-43b5-9fa8-c44b7bb0bdbb" class="column-list"><div id="7bb2c66a-1414-4ba2-818d-b5c59c9df53c" style="width:81.25%" class="column"><p id="67d8ad08-c53b-4a27-917e-c59313dcf33b" class=""><strong>Resume el plan para disipar dudas.</strong></p><p id="c639cd7e-6e3c-4e76-bef1-e29fe8cac1ad" class=""><strong>Siguientes pasos que tiene que dar.</strong></p><p id="b40e7e75-0222-471e-bfc4-b3a6f35ebb53" class="">Analizar dudas: Que plazos hay?, formas de pago, subvenciones, formación adecuada, acompañamiento</p><p id="1d070baf-c298-413d-a0e4-810bcf307175" class="">Contarle el plan y hacerle ver que es sencillo.</p></div><div id="608ef679-3ec6-4c8a-a94a-92b3368e1988" style="width:18.749999999999993%" class="column"><figure id="17010a64-ef91-477b-8b2f-64c915367ca1" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%205.png"><img style="width:192px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%205.png"/></a></figure></div></div><div id="0b75987d-b4a3-4f16-beb4-c831e3ec490c" class="column-list"><div id="7ace746a-d2d6-4af6-b946-dbb28e0ed81e" style="width:18.75%" class="column"><figure id="80ede36f-890e-435f-a955-d3d59582d333" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%206.png"><img style="width:120px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%206.png"/></a></figure></div><div id="0c40102a-ea70-49eb-bb6f-e08042c34589" style="width:81.25%" class="column"><p id="16b160ee-6147-4f1b-9adb-a171d6523ac0" class=""><strong>Y pídele que haga algo.</strong></p><p id="8c92a9d2-391c-4f19-9087-f770debb2705" class=""><strong>¿Qué quieres que haga?</strong></p><p id="3b570961-80d6-46c7-b7c0-e5bb3d76e47a" class="">Solicita información, te lo contamos, te llamamos…</p></div></div><div id="d5bc7736-3a2d-4fc3-96f6-8218d18fc2a3" class="column-list"><div id="16390db4-ea48-4a8c-8528-276457b12cc8" style="width:81.25%" class="column"><p id="5a94c94d-7b2e-4237-9d67-bb120fed1724" class=""><strong>Que resulte en… El siguiente ÉXITO (hacerle visualizar el final feliz)</strong></p><p id="749e4c29-2eb8-4331-bc24-85da658d448e" class="">Vas a mejorar el CV, vas a poder mejorar tu entorno, trabajo de por vida, aprenderás fácilmente, formación oficial con el mejor profesorado.</p></div><div id="f50a0d9e-10ef-4602-87a9-9ca2dd421f09" style="width:18.75%" class="column"><figure id="c7088d70-0f52-4b81-8713-affa7743f8a1" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%207.png"><img style="width:108px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%207.png"/></a></figure></div></div><div id="beacb6ca-03ef-4ee9-92dc-042be838b4b3" class="column-list"><div id="bc18884d-469a-4a55-aec2-47720445f5f7" style="width:18.75%" class="column"><figure id="d1fcac5e-d248-458f-92cc-5b1e4c15f1cb" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%208.png"><img style="width:171px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%208.png"/></a></figure></div><div id="a56640b5-0074-4683-8dc0-03762db057e4" style="width:81.25%" class="column"><p id="ad187bfc-db70-4b82-9ed8-33ae6dc35f0d" class=""><strong>O si no nos elige resultará en el siguiente FRACASO (hacerle visualizar lo que puede perder)</strong></p><p id="4c7664e9-7825-4687-bc2b-0559ebfb96c0" class="">Vas a desaprovechar tu talento y la oportunidad de empezar tu vida académica sin salir de casa.</p><p id="eac32696-8f9c-4545-a22c-d3a1bdb4e05c" class="">Vas a perderte una oportunidad única.</p></div></div><h3 id="9acce8fe-d733-445c-8259-2c1c17296854" class="">Resultado</h3><p id="957dc4d0-53ae-4d7a-9c48-26c5fe8a3ab3" class="">Enseñamos a Tomás, de 18 años, terminando el bachiller, desde su casa, mirando lo caro que es irse a la universidad más cercana, los alquileres… y le sale un anuncio en tiktok que le llama la atención sobre nuestras formaciones online: ¿buscando universidad? ¿has probado la online?. Y ahora empieza a buscar información sobre nuestros cursos. su madre se acerca y le dice que ¿qué web es esa?, que parece curiosa la idea: puede trabajar aquí, en el pueblo, y formarse de “cosas nuevas de esas”. Se acerca su padre y le dice que pida información, para preguntar plazos, precios, salidas profesionales… ponemos unos letreros en la imagen diciendo: “las formaciones más punteras, en tu pueblo, a un click, contáctanos sin compromiso”.</p><h3 id="81fae65b-e809-4e31-964e-eee6d62b9ed8" class="">One liner 1: Método Storybrand</h3><p id="c35e7861-d6c0-4062-986e-ade6949813cc" class="">Ayudamos a estudiantes a recibir formación de calidad online con todas las facilidades económicas y de horarios desde su propia casa</p><h3 id="28f4be0e-4235-4740-bae3-4bc2b69576a4" class="">One liner 2: Método Problema-Beneficio</h3><p id="01c6da45-23b1-4686-9eed-a4a95ada3b48" class="">Nos dedicamos a dar formaciones a personas que se encuentran en una situación de inestabilidad laboral, proporcionándoles todas las facilidades económicas y técnicas para sacarse una oposición, de esta manera pueden disfrutar de un trabajo de por vida.</p><h1 id="d80c7f0c-fbd0-44d2-ab91-58a48810f908" class="">6. Contenidos</h1><h2 id="825bc6ac-f511-4013-9111-045a89b1b0e6" class=""><details open=""><summary>a. Post de blog </summary></details></h2><div class="indented"><hr id="f12901bc-5284-4dda-a175-604cd6e514b2"/><h3 id="de76a04a-aa35-4ac6-b5c2-17c378576400" class=""><details open=""><summary>Ideas de contenidos de blog</summary></details></h3><div class="indented"><ol type="1" id="1c1108e3-4184-4bf7-8c2d-585778ec8ca3" class="numbered-list" start="1"><li><strong>Anota los principales contenidos de los que se habla en los blogs de tu sector</strong><ul id="604a6553-1f52-4ad0-a96b-1684964ddcce" class="bulleted-list"><li style="list-style-type:disc">Panorama actual</li></ul><ul id="8ff1f94e-4cd6-4736-ac1c-d8063961b800" class="bulleted-list"><li style="list-style-type:disc">Cuánto cobran los funcionarios / empleados de correos</li></ul><ul id="cdb0adc5-6789-473c-b58a-83b4df96d8dd" class="bulleted-list"><li style="list-style-type:disc">Estudiar oposiciones y trabajar </li></ul><ul id="147e6e58-c67e-4457-b523-a4a9e32a4a35" class="bulleted-list"><li style="list-style-type:disc">Ventajas de formación online</li></ul><ul id="467ad88a-df9f-475c-af80-d462457f346d" class="bulleted-list"><li style="list-style-type:disc">Información sobre convocatorias oposiciones y cursos</li></ul><ul id="2ce60f90-efa8-455b-8db9-74a7cb58c2e8" class="bulleted-list"><li style="list-style-type:disc">Explicaciones de términos técnicos</li></ul><ul id="dd13d752-ab95-40aa-9e8b-78882e3b4291" class="bulleted-list"><li style="list-style-type:disc">Características de funciones de trabajos</li></ul><ul id="d0517ffc-cc30-4c53-9bec-7e04d08aac01" class="bulleted-list"><li style="list-style-type:disc">Beneficios de aprender a codificar pronto</li></ul><ul id="27fce7a7-61c2-4af4-bd25-e2db4087811e" class="bulleted-list"><li style="list-style-type:disc">Beneficios de la FP frente a títulos universitarios al buscar empleo </li></ul><ul id="2101c95c-0deb-4179-a40e-dbf7a6386442" class="bulleted-list"><li style="list-style-type:disc">Proyección académica</li></ul><ul id="f805275b-44f4-499a-b1ca-a9c9350fdb48" class="bulleted-list"><li style="list-style-type:disc">Proyectos / ayudas al emprendimiento</li></ul></li></ol><ol type="1" id="93ac1e4b-05dc-46ef-897c-ba4a6b087b8a" class="numbered-list" start="2"><li><strong>Crea una estrategia de contenidos para el blog de tu empresa (mínimo 6 entradas (posts) de blogs)</strong><p id="16dfee34-3695-4509-b2c8-d1132b7f6b7c" class=""><strong>Tono:</strong>  Informal pero directo, 2º Persona</p><p id="f3773467-7867-4ea0-bb85-bfca0506b956" class=""><strong>Customer Persona:</strong> Tomás, Helena</p><table id="41aae992-8a3c-4661-935b-389bbcb093f5" class="simple-table"><thead class="simple-table-header"><tr id="de408d0e-cb46-4c77-b71b-9d17eaec7772"><th id="{QLC" class="block-color-teal_background simple-table-header" style="width:145.171875px">Título / Temática</th><th id="LJV?" class="block-color-teal_background simple-table-header" style="width:173.65625px">Contenido / Breve descripción</th><th id="Pw@y" class="block-color-teal_background simple-table-header" style="width:95px">Fecha</th><th id="Bli=" class="block-color-teal_background simple-table-header">Objetivo, CTA (customer persona)</th></tr></thead><tbody><tr id="37b2c0a4-da88-4b77-95e9-4945c23a95f1"><td id="{QLC" class="" style="width:145.171875px">Información sobre convocatorias de oposiciones</td><td id="LJV?" class="" style="width:173.65625px">Fechas y temarios de las distintas convocatorias.</td><td id="Pw@y" class="" style="width:95px">01/05/2023</td><td id="Bli=" class="">Ofrecemos los temarios de las distintas oposiciones, &quot;Atrévete&quot; (Helena)</td></tr><tr id="38461853-b6d8-4596-a90c-1a1df6816479"><td id="{QLC" class="" style="width:145.171875px">Fórmate sin dejar tu trabajo</td><td id="LJV?" class="" style="width:173.65625px">Para personas empleadas que quieren promocionarse sin descuidar su puesto.</td><td id="Pw@y" class="" style="width:95px">01/06/2023</td><td id="Bli=" class="">Quiero que vean el catalogo de cursos que tenemos, &quot;Descubre nuestros cursos&quot;(Tomás)</td></tr><tr id="aae6e070-fd11-4caf-99eb-fe599fb88a00"><td id="{QLC" class="" style="width:145.171875px">Beneficios de la formación online</td><td id="LJV?" class="" style="width:173.65625px">Permite formarte en el área que tu elijas sin tener que desplazarte. Y si te desplazas puedes conectarte.</td><td id="Pw@y" class="" style="width:95px">01/07/2023</td><td id="Bli=" class="">Mostrar los beneficios de nuestras formaciones, &quot;Descubre nuestros cursos&quot;(Tomás)</td></tr><tr id="d9bcf293-0d56-4dd6-a687-57014e4f2da7"><td id="{QLC" class="" style="width:145.171875px">Información sobre solicitudes de becas y ayudas</td><td id="LJV?" class="" style="width:173.65625px">Fechas cuantía de las ayudas y becas y como solicitarlas.</td><td id="Pw@y" class="" style="width:95px">01/08/2023</td><td id="Bli=" class="">Quieren descubrir las posibles ayudas y crear comunidad, &quot;Infórmate&quot;(Tomás)</td></tr><tr id="b73035c3-89ab-42d2-9f64-29f2a720488f"><td id="{QLC" class="" style="width:145.171875px">Beneficios de aprender a programar</td><td id="LJV?" class="" style="width:173.65625px">Cuanto antes empecemos a programar más soltura tendremos en el futuro.</td><td id="Pw@y" class="" style="width:95px">01/09/2023</td><td id="Bli=" class="">Quiero que vean el catalogo de cursos que tenemos, &quot;Descubre nuestros cursos&quot;(Helena, Tomás)</td></tr><tr id="19c6a4b9-ba01-409f-b52e-8ca6d6f7cfd2"><td id="{QLC" class="" style="width:145.171875px">Ayudas al emprendimiento</td><td id="LJV?" class="" style="width:173.65625px">Información sobre las posibles Ayudas publicas a las que puedes optar si decides emprender.</td><td id="Pw@y" class="" style="width:95px">01/12/2023</td><td id="Bli=" class="">Hacer comunidad entre personas que quieren emprender, &quot;Te Ayudamos&quot; (Helena, Tomás)</td></tr></tbody></table></li></ol></div><h3 id="9f522a34-e898-4d8a-aa5c-262da0bd0a55" class=""><details open=""><summary>Búsqueda de palabras clave para Post de blog</summary></details></h3><div class="indented"><p id="f45e32ab-eb1c-4ac4-a8f0-3b9936672171" class=""><strong>Palabras clave elegidas</strong></p><ul id="a3e06c75-f762-4da2-985f-6ba08dbcb3f5" class="bulleted-list"><li style="list-style-type:disc">becas universidad 2022-23 españa</li></ul><ul id="90d81e5c-88cc-43d9-b288-940b4f18e336" class="bulleted-list"><li style="list-style-type:disc">becas formación profesional</li></ul><ul id="4d8f9165-2e9f-47f2-a6a5-b4da7641b909" class="bulleted-list"><li style="list-style-type:disc">becas privadas</li></ul><p id="6ebf52cc-521e-4cde-ab43-5a81305fe556" class=""><strong>Principales competidores con esas palabras: </strong></p><ul id="019c8673-852f-4c62-9e16-2f8ba76e8214" class="bulleted-list"><li style="list-style-type:disc">Ministerio de educación ( <a href="https://sede.educacion.gob.es/sede/login/inicio.jjsp?idConvocatoria=1707">sede electrónica</a>, <a href="https://www.educacionyfp.gob.es/servicios-al-ciudadano/catalogo/estudiantes.html">catálogo</a> )</li></ul><ul id="5e30fcca-440e-4968-8e02-2b48e09158aa" class="bulleted-list"><li style="list-style-type:disc">Educaweb </li></ul><ul id="b46a4caa-d254-4c77-abef-d25c2523085f" class="bulleted-list"><li style="list-style-type:disc">Becas-Santander</li></ul></div><hr id="a73fe637-f172-45f1-931a-749de91a0c5d"/><h1 id="c09c28a3-d5e1-442f-b5f3-6e855d25a188" class="">Dónde encontrar información sobre solicitudes de becas y ayudas</h1><p id="c63ba1a7-d878-4338-ae7b-00d2916ff1ba" class="">&lt;Metadescripción: aquí encontrarás dónde encontrar información sobre las ayudas y becas para estudiar en universidades Europeas&gt;</p><figure id="422aba7c-efaa-41cc-a8ec-917b587d9e29" class="image"><a href="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"><img style="width:624px" src="https://images.unsplash.com/photo-1603796846097-bee99e4a601f?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"/></a></figure><p id="7bb62e9f-4d5d-4582-9435-60195b9ac2bb" class="">¡Hola!</p><p id="3cae8299-50e3-4394-827d-8a0d223fa1ab" class="">Si estás interesado en obtener<strong> ayudas y becas</strong> para estudiar en la universidad en España, aquí hay algunas opciones que puedes considerar:</p><h2 id="1d6828ae-e957-4958-a3ba-8e945da96503" class="">Ayudas y becas de la Unión Europea</h2><p id="b8681269-558c-4792-96d4-f97255ad5d06" class="">Si estás interesado en obtener ayudas para estudiar en la Unión Europea (UE), hay varias opciones que puedes considerar:</p><figure id="19f519ff-80c6-4b9c-9164-d4de6d57aacb" class="image"><a href="https://images.unsplash.com/photo-1645705315654-019e91990d4f?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"><img src="https://images.unsplash.com/photo-1645705315654-019e91990d4f?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"/></a></figure><h3 id="95340564-813f-4b83-8eee-f20ad5f640ab" class="">1. Programa Erasmus: </h3><p id="1b4008c0-c704-4b8a-8baf-df9d65a2ef85" class="">El Programa Erasmus es un programa de la UE que ofrece a estudiantes la oportunidad de estudiar en otro país de la UE <strong>por un período determinado</strong>. Los estudiantes pueden recibir ayuda financiera a través del programa para cubrir los costos de alojamiento y manutención durante su estancia en el extranjero. Para más información, puedes visitar el sitio web de Erasmus: </p><figure id="3599481d-cce8-4d95-9477-119782f24606"><a href="https://ec.europa.eu/programmes/erasmus-plus/opportunities/students_en" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Students</div><div class="bookmark-description">Studying abroad is a central part of Erasmus+ and has been shown to have a positive effect on later job prospects. It is also an opportunity to improve language skills, gain self-confidence and independence and immerse yourself in a new culture. Erasmus+ also offers the chance to combine studying abroad with a traineeship.</div></div><div class="bookmark-href">https://ec.europa.eu/programmes/erasmus-plus/opportunities/students_en</div></div></a></figure><h3 id="7e7ac5fe-c6e1-467a-a308-cf320c8c71f9" class="">2. Programa de formación de la UE: </h3><p id="a675a822-dfef-4ac4-b6af-1bb646ff0896" class="">El Programa de Formación de la UE ofrece a estudiantes y profesionales la oportunidad de participar en <strong>cursos de formación en el extranjero</strong>. Los participantes pueden recibir ayuda financiera para cubrir los costos de alojamiento y manutención durante su estancia en el extranjero. Para más información, puedes visitar el sitio web del programa: </p><figure id="9bdac294-3a72-4d80-8209-c13917a9a799"><a href="https://european-union.europa.eu/live-work-study/studying-and-training-eu_en" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Studying and training in the EU</div><div class="bookmark-description">The European Union helps its member countries in their efforts to provide the best education and training opportunities for their citizens.</div></div><div class="bookmark-href"><img src="https://european-union.europa.eu/profiles/contrib/ewcms/themes/ewcms_theme/favicon.ico" class="icon bookmark-icon"/>https://european-union.europa.eu/live-work-study/studying-and-training-eu_en</div></div><img src="https://european-union.europa.eu/profiles/contrib/ewcms/modules/ewcms_seo/assets/images/eu-socialmedia-fallback.png" class="bookmark-image"/></a></figure><h3 id="999e26c8-1685-4c66-9f66-48771c6dba62" class="">3. Más ayudas de la UE</h3><p id="bd7a1e7f-6a5a-464c-ae17-95eb09a7bba4" class="">La UE tiene otras muchas más becas y ayudas de las que puedes aprovechar para <strong>estudiar, investigar y trabajar</strong> en cualquiera de sus Estados Miembros. Para más información, puedes visitar el sitio web: </p><figure id="4f1e91db-09b9-4f4c-aabb-b75ca86c8225"><a href="https://commission.europa.eu/education/study-or-teach-abroad/scholarships-and-student-finance/find-scholarship_es" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Búsqueda de becas</div><div class="bookmark-description">Cómo obtener una beca en Europa, programas de financiación de la UE para la educación, becas para estudiantes internacionales, becas para estudiantes de interpretación.</div></div><div class="bookmark-href"><img src="https://commission.europa.eu/profiles/contrib/ewcms/themes/ewcms_theme/favicon.ico" class="icon bookmark-icon"/>https://commission.europa.eu/education/study-or-teach-abroad/scholarships-and-student-finance/find-scholarship_es</div></div><img src="https://commission.europa.eu/profiles/contrib/ewcms/modules/ewcms_seo/assets/images/ec-socialmedia-fallback.png" class="bookmark-image"/></a></figure><h2 id="ecf7aca4-61d9-4e8f-ac77-06654bfbddbc" class="">Ayudas y becas del Ministerio de Educación y Formación Profesional: </h2><figure id="b6ef1dbe-5e16-4092-8e61-069cea65ec92" class="image"><a href="https://images.unsplash.com/photo-1566232392379-afd9298e6a46?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"><img src="https://images.unsplash.com/photo-1566232392379-afd9298e6a46?ixlib=rb-4.0.3&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb"/></a></figure><p id="f1b3587f-8632-40ae-a051-a33e7f5b6a46" class="">El Ministerio de Educación y Formación Profesional ofrece una serie de ayudas a estudiantes universitarios que cumplen con ciertos <strong>requisitos</strong> <strong>de renta</strong> y que estudian en <strong>determinadas titulaciones</strong>. Puedes encontrar más información sobre estas ayudas y cómo solicitarlas en el sitio web del Ministerio: </p><figure id="45d470bf-0e5d-48a2-80f8-a811c4221c7a"><a href="https://www.educacionyfp.gob.es/servicios-al-ciudadano/catalogo/general/05/050130/ficha/050130-2022.html" class="bookmark source"><div class="bookmark-info"><div class="bookmark-text"><div class="bookmark-title">Becas y ayudas a alumnos de niveles postobligatorios (Curso 2022-2023)</div><div class="bookmark-description">Curso 2022-2023 Toda la información sobre esta convocatoria podrás encontrarla en el Portal de BECAS de EDUCACIÓN La convocatoria se publicó el 12 de marzo, y podrán presentarse solicitudes desde el 30 de marzo hasta el 16 de mayo. Subir Becas y ayudas a alumnos de niveles postobligatorios Todos los trámites relativos a la solicitud pueden realizarse online.</div></div><div class="bookmark-href"><img src="https://www.educacionyfp.gob.es/favicon.ico" class="icon bookmark-icon"/>https://www.educacionyfp.gob.es/servicios-al-ciudadano/catalogo/general/05/050130/ficha/050130-2022.html</div></div></a></figure><h2 id="b6c50a31-168c-459b-ab19-b1b1a7b7d896" class="">Becas del gobierno regional o local: </h2><p id="030242dd-1894-4df9-aa6a-c8485d608ae3" class="">Muchos gobiernos regionales y locales en España ofrecen becas a estudiantes que demuestran <strong>necesidad financiera</strong> o que tienen <strong>éxito académico</strong>. A menudo se pueden encontrar estas becas a través de la oficina de financiación estudiantil de la universidad o en línea en el sitio web del gobierno regional o local. Infórmate en tu ayuntamiento.</p><h2 id="a95f8e06-7d64-4e9a-900b-d75e2f4ef04a" class="">Becas de la universidad: </h2><p id="3c27ea4b-f47e-42bb-8d6d-1fca6f1eb742" class="">Muchas universidades españolas ofrecen becas a sus estudiantes en base a méritos académicos o necesidad financiera. Si estás interesado en obtener una beca de tu universidad, debes comunicarte con la oficina de financiación estudiantil para obtener más información.</p><h2 id="3549b65a-7cd3-4ddf-a065-99dc7a290713" class="">Becas y ayudas privadas: </h2><p id="f28564b3-c33e-4f97-a8b2-0cea478c81e1" class="">Hay muchas organizaciones privadas y corporaciones que ofrecen becas a estudiantes que cumplen con ciertos criterios, como tener <strong>una determinada carrera o ser miembro de una organización particular</strong>. Puedes buscar estas becas en línea o en la biblioteca local.</p><p id="4339d0bb-9ccd-457c-ad66-bfdb84d20bc7" class="">También hay ciertas bancos o fundaciones privadas que ofrecen becas y ayudas como <strong><a href="http://www.becas-santander.com/es/index">Becas Santander</a></strong><strong> </strong>o <a href="https://www.notion.so/Auxiliar-administrativo-a-7086b8b0edd24df5880e2af7aadf8ca1">Fundación La Caixa</a></p><p id="2460872f-fc69-4be6-b79a-26a2cb050f9a" class="">Espero que esta información sea útil para ti. </p><p id="5f8ce5d0-8915-4ca0-a6b7-510e196cb076" class="">Entérate de las<strong> todas becas, ayudas y cursos subvencionados </strong>a través de nuestra <strong>newsletter.</strong></p><figure class="block-color-red callout" style="white-space:pre-wrap;display:flex" id="cf6ea9b0-8b7b-4293-bbbd-6ec44d4073a7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><span style="border-bottom:0.05em solid"><strong>subscríbete aquí</strong></span></div></figure><p id="8cd0e47b-3f39-47cf-8702-81a9a488c185" class=""><strong>¡Buena suerte con tus estudios!</strong></p><figure id="5b47846e-e209-4d54-9ffe-9de3af629952"><div class="source"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/post_de_blog_-_becas.docx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0144369b-8351-4f9e-963b-09ebd2f6e90d/post_de_blog_-_becas.docx</a></div></figure></div><h2 id="aaeaef14-76b4-4ff9-8302-10fae843ae2f" class=""><details open=""><summary>b. Ejemplo de Instagram / LinkedIn +hashtags</summary></details></h2><div class="indented"><hr id="dfbd2a4f-3851-43e7-9d30-c2e6a6708ecd"/><h3 id="f961927e-baa7-446b-8f17-7066e71ee936" class=""><details open=""><summary>Crea tu bio para Instagram</summary></details></h3><div class="indented"><p id="55f3ce77-1df1-4ead-aa96-70b73faa9603" class="">Certificaciones en nuevas tecnologías, con facilidades de pago adaptadas a ti y con  profesorado de amplia experiencia 👨‍💻. ¡Apruébanos aquí!.</p></div><hr id="72c7406d-82e9-4799-8f52-c6ae3c8438ba"/><h3 id="e6c50aea-9500-453b-b3c1-6833e1b878b2" class=""><details open=""><summary>Post de LinkedIn</summary></details></h3><div class="indented"><p id="35992cac-3214-4290-bdca-2ddb960f7e17" class="">Cosas que no ocurriran con nosotros</p><figure id="065424e3-e6c4-4c79-864b-eb330216599c" class="image"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%209.png"><img style="width:196px" src="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Untitled%209.png"/></a></figure></div><p id="6c737723-65af-4ffa-bb77-7c9844827ffa" class="">
+</p><h3 id="5388f8fb-d269-4288-a3c4-e036f93b89be" class=""><details open=""><summary>Hashtags para un post de Linkedin</summary></details></h3><div class="indented"><ul id="ac4bec5f-0859-4a95-aff8-c0170c3eb72d" class="bulleted-list"><li style="list-style-type:disc">Más de 100.000 publicaciones:<ul id="ca08094f-1180-440d-8b54-83bb7bba3ef5" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#trabajodesdecasa</mark></li></ul><ul id="d4b3e6da-0d4e-4193-af3d-eb6d4b260990" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#formación</mark></li></ul><ul id="dc46a0a0-ee02-44a8-9a40-f511862388b6" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#cursosonline</mark></li></ul><ul id="48bf92f4-70b6-4fed-aae2-23b5f64bc355" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#emprenderenfemenino</mark></li></ul><ul id="e01f1f9c-f272-4924-8ee2-79733f18e16d" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#emprender</mark></li></ul></li></ul><ul id="0c0b8a01-d1d4-4e09-934f-3d24270fe081" class="bulleted-list"><li style="list-style-type:disc">Entre 10.000 y 100.000 publicaciones<ul id="f1a38db2-b0e9-48fa-a713-9bae261305a8" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#formacióncontinua</mark></li></ul><ul id="2a26dbcd-7eea-41eb-acc6-6f86fab56d8c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#formaciononline</mark></li></ul><ul id="573875cf-57bf-484d-af20-6a6e4f8b0a03" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#cursosonlinecertificados</mark></li></ul><ul id="f3f66d4c-66fa-417c-a717-241f8064993c" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#programar</mark></li></ul><ul id="794b040e-395d-432b-97b2-8014d3ca1961" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#superaciónprofesional</mark></li></ul></li></ul><ul id="458e7a91-19e4-4c47-807a-48348d703543" class="bulleted-list"><li style="list-style-type:disc">Menos de 10.000 publicaciones<ul id="bcc32768-18e8-497d-a567-143e91816817" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#formaciónparaelempleo</mark></li></ul><ul id="9111f475-58f4-448a-85c6-22f8a654f595" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#trabajoyestudioonline</mark></li></ul><ul id="d1718842-c66b-403f-96ff-5176b5ce9c3f" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#estudiadesdecasa</mark></li></ul><ul id="385927c9-1061-4d04-a5d6-6d524408e938" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#estudioonline</mark></li></ul><ul id="df699957-2a36-4742-8362-859613fe6d5e" class="bulleted-list"><li style="list-style-type:circle"><mark class="highlight-blue">#mejoradetrabajo</mark></li></ul></li></ul></div></div><h1 id="2b39cdfb-6897-4984-86f0-081e00f2b21f" class="">7. Campaña de e-mail marketing</h1><figure id="45debbe9-fe75-4363-9836-91e0ebc1b3f7"><div class="source"><a href="https://preview.mailerlite.io/preview/225869/emails/77639233689356024">https://preview.mailerlite.io/preview/225869/emails/77639233689356024</a></div></figure><h1 id="3146b2fe-29f8-42d4-aa4c-759c7052d982" class="">8. Programa editorial</h1><figure id="6a233fcf-0596-4318-97f8-ed4453e94604"><div class="source"><a href="Proyecto%20final%20948f88216a824792bc5b518152d7aae8/Programa-editorial-Academia.xlsx">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/243855a3-bea4-4743-926d-c1aa5671dd34/Programa-editorial-Academia.xlsx</a></div></figure></div></article></body></html>
